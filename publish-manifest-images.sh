@@ -89,15 +89,15 @@ docker manifest push -p rancher/pause:3.1
 
 #k8s.gcr.io/defaultbackend:1.4
 docker pull k8s.gcr.io/defaultbackend-amd64:1.4
-docker tag k8s.gcr.io/defaultbackend-amd64:1.4 rancher/defaultbackend:1.4-amd64
+docker tag k8s.gcr.io/defaultbackend-amd64:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-amd64
 docker pull k8s.gcr.io/defaultbackend-arm64:1.4
-docker tag k8s.gcr.io/defaultbackend-arm64:1.4 rancher/defaultbackend:1.4-arm64
-docker push rancher/defaultbackend:1.4-amd64
-docker push rancher/defaultbackend:1.4-arm64
-docker manifest create rancher/defaultbackend:1.4 rancher/defaultbackend:1.4-amd64 rancher/defaultbackend:1.4-arm64
-docker manifest annotate rancher/defaultbackend:1.4 rancher/defaultbackend:1.4-amd64 --arch amd64
-docker manifest annotate rancher/defaultbackend:1.4 rancher/defaultbackend:1.4-arm64 --arch arm64
-docker manifest push -p rancher/defaultbackend:1.4
+docker tag k8s.gcr.io/defaultbackend-arm64:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
+docker push rancher/nginx-ingress-controller-defaultbackend:1.4-amd64
+docker push rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
+docker manifest create rancher/nginx-ingress-controller-defaultbackend:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-amd64 rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
+docker manifest annotate rancher/nginx-ingress-controller-defaultbackend:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-amd64 --arch amd64
+docker manifest annotate rancher/nginx-ingress-controller-defaultbackend:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-arm64 --arch arm64
+docker manifest push -p rancher/nginx-ingress-controller-defaultbackend:1.4
 
 #gcr.io/google_containers/metrics-server:v0.3.1
 docker pull gcr.io/google_containers/metrics-server-amd64:v0.3.1
